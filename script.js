@@ -1,17 +1,19 @@
 "use strict";
 const imgs = document.querySelectorAll(".choose-img");
+const images = document.querySelectorAll(".show-img");
 console.log(imgs);
 const win = document.querySelector(".count-win");
 const lose = document.querySelector(".count-lose");
 const draw = document.querySelector(".count-draw");
 const displayHead = document.querySelector(".h1");
 let [rock, paper, scissor] = imgs;
+let [img1, img2] = images;
 let userValue;
 let computerValue;
 let winner = "draw";
 let counter;
 function gamePlay(element) {
-  //   document.querySelector(".game-play").classList.remove("hidden");
+  document.querySelector(".game-play").classList.remove("hidden");
   userValue = element.getAttribute("alt");
   console.log(userValue);
 }
@@ -29,6 +31,10 @@ function randomCompValue() {
       break;
   }
   console.log(computerValue);
+}
+function showResult() {
+  img1.setAttribute("src", `${userValue}.png`);
+  img2.setAttribute("src", `${computerValue}.png`);
 }
 function chooseWinner() {
   if (computerValue === userValue) {
@@ -63,21 +69,32 @@ function displayScore() {
     displayHead.textContent = "Draw!";
   }
 }
+function reset() {
+  setTimeout(() => {
+    document.querySelector(".game-play").classList.add("hidden");
+  }, 3000);
+}
 rock.addEventListener("click", () => {
   gamePlay(rock);
   randomCompValue();
   chooseWinner();
+  showResult();
   displayScore();
+  reset();
 });
 paper.addEventListener("click", () => {
   gamePlay(paper);
   randomCompValue();
   chooseWinner();
+  showResult();
   displayScore();
+  reset();
 });
 scissor.addEventListener("click", () => {
   gamePlay(scissor);
   randomCompValue();
   chooseWinner();
+  showResult();
   displayScore();
+  reset();
 });

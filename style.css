@@ -11,7 +11,8 @@ body {
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
-  background-color: #fff;
+  background-color: pink;
+  overflow: hidden;
 }
 nav {
   max-width: 100%;
@@ -62,15 +63,79 @@ nav {
 .draw {
   background-color: grey;
 }
-h1 {
+
+.h1 {
   font-size: 6rem;
 }
-.main-game {
+.main-game,
+.game-play {
   width: 80%;
-  height: 10rem;
+  height: calc(100% - 20rem);
   margin: 0 auto;
-  background-color: red;
+}
+.game-play {
+  z-index: 8;
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+.show,
+.choose {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 2rem;
+}
+.show {
+  grid-template-columns: 1fr 1fr;
+}
+.choose {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.choose div,
+.show div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.h2 {
+  font-size: 4rem;
+}
+.choose-img,
+.show-img {
+  height: 30rem;
+  box-shadow: 0.3rem 0.3rem 5px rgba(0, 0, 0, 0.7);
+}
+.show1 {
+  transform: rotate(90deg);
+  transform-origin: left;
+  animation: moveIt 2.5s ease-in-out infinite;
+}
+.show2 {
+  transform: rotate(90deg);
+  transform-origin: left;
+  animation: moveIt 2.5s ease-in-out infinite;
+}
+.choose-img:hover {
+  transform: scale(1.2);
 }
 .hidden {
   display: none;
+}
+.rock,
+.paper,
+.scissor {
+  padding: 2rem;
+}
+
+@keyframes moveIt {
+  0%,
+  100% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
 }

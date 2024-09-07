@@ -9,7 +9,7 @@
   <body>
     <nav>
       <a class="again-btn" href="#">Again !</a>
-      <h1 class="heading">Choose !</h1>
+      <h1 class="h1">Choose !</h1>
       <div class="scorecard">
         <div class="score won">
           <p class="result">Won</p>
@@ -17,7 +17,7 @@
         </div>
         <div class="score lose">
           <p class="result">Lose</p>
-          <p class="count-loss">0</p>
+          <p class="count-lose">0</p>
         </div>
         <div class="score draw">
           <p class="result">Draw</p>
@@ -27,11 +27,33 @@
     </nav>
 
     <section class="main-game">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="choose">
+        <div class="rock">
+          <img src="rock.png" alt="rock" class="choose-img" />
+          <h2 class="h2">Rock</h2>
+        </div>
+        <div class="paper">
+          <img src="paper.png" alt="paper" class="choose-img" />
+          <h2 class="h2">Paper</h2>
+        </div>
+        <div class="scissor">
+          <img src="scissor.png" alt="scissor" class="choose-img" />
+          <h2 class="h2">Scissor</h2>
+        </div>
+      </div>
     </section>
-    <section class="game-play hidden"></section>
+    <section class="game-play">
+      <div class="show">
+        <div class="user">
+          <h2 class="h2">User</h2>
+          <img src="rock.png" alt="rock" class="show-img show1" />
+        </div>
+        <div class="computer">
+          <h2 class="h2">User</h2>
+          <img src="rock.png" alt="rock" class="show-img show2" />
+        </div>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>

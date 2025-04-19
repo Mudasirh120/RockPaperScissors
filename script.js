@@ -5,6 +5,7 @@ const win = document.querySelector(".count-win");
 const lose = document.querySelector(".count-lose");
 const draw = document.querySelector(".count-draw");
 const displayHead = document.querySelector(".txt");
+const again = document.querySelector(".again-btn");
 let [rock, paper, scissor] = choose;
 let [img1, img2] = show;
 let userValue;
@@ -92,4 +93,9 @@ scissor.addEventListener("click", () => {
   showResult();
   displayScore();
   reset();
+});
+again.addEventListener("click", () => {
+  win.textContent = 0;
+  lose.textContent = 0;
+  draw.textContent = 0;
 });

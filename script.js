@@ -1,21 +1,18 @@
 "use strict";
-const imgs = document.querySelectorAll(".choose-img");
-const images = document.querySelectorAll(".show-img");
-console.log(imgs);
+const choose = document.querySelectorAll(".choose-img");
+const show = document.querySelectorAll(".show-img");
 const win = document.querySelector(".count-win");
 const lose = document.querySelector(".count-lose");
 const draw = document.querySelector(".count-draw");
-const displayHead = document.querySelector(".h1");
-let [rock, paper, scissor] = imgs;
-let [img1, img2] = images;
+const displayHead = document.querySelector(".txt");
+let [rock, paper, scissor] = choose;
+let [img1, img2] = show;
 let userValue;
 let computerValue;
 let winner = "draw";
 let counter;
 function gamePlay(element) {
-  document.querySelector(".game-play").classList.remove("hidden");
   userValue = element.getAttribute("alt");
-  console.log(userValue);
 }
 function randomCompValue() {
   let num = Math.trunc(Math.random() * 3) + 1;
@@ -30,11 +27,10 @@ function randomCompValue() {
       computerValue = "scissor";
       break;
   }
-  console.log(computerValue);
 }
 function showResult() {
-  img1.setAttribute("src", `${userValue}.png`);
-  img2.setAttribute("src", `${computerValue}.png`);
+  img1.setAttribute("src", `images/${userValue}1.png`);
+  img2.setAttribute("src", `images/${computerValue}2.png`);
 }
 function chooseWinner() {
   if (computerValue === userValue) {
@@ -52,7 +48,6 @@ function chooseWinner() {
   } else if (computerValue === "scissor" && userValue === "rock") {
     winner = "user";
   }
-  console.log(winner);
 }
 function displayScore() {
   if (winner === "user") {

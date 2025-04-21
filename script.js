@@ -98,4 +98,5 @@ again.addEventListener("click", () => {
   win.textContent = 0;
   lose.textContent = 0;
   draw.textContent = 0;
+  displayHead.textContent = "Choose any !!!";
 });
